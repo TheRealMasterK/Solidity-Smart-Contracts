@@ -51,7 +51,17 @@ contract Dao {
 
 
     // increments the number of votes up or down - calculates the number of votes
-    event newVote(      
+    
+    event proposalCreated(
+        uint256 id,
+        string description,
+        uint256 maxVotes,
+        address proposer
+    );
+    
+    
+    
+    event newVote(
         uint256 votesUp,
         uint256 votesDown,
         address voter,
