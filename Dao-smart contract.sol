@@ -13,6 +13,7 @@ contract Dao {
     address public owner;
     uint256 nextProposal;
     uint256[] public validTokens;
+    IdaoContract daoContract;
 
     constructor(){
         owner = msg.sender;
@@ -36,19 +37,7 @@ contract Dao {
 
     }
 
-
-
-
     mapping(uint256 => proposal) public Proposals;
-
-    // Allows community to create a new proposal & also contains info of the proposal
-    event proposalCreated(
-        uint256 id,
-        string description,
-        uint256 maxVotes,
-        address proposer   
-    );
-
 
     // increments the number of votes up or down - calculates the number of votes
     
@@ -166,4 +155,3 @@ contract Dao {
 
 
 }
-
